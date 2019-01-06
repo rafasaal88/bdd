@@ -1,7 +1,4 @@
-select * from 
-(
-  select consultas.VOTANTE, count(consultas.votante) as participaciones
-  from consultas
-  group by consultas.votante
-)
+select consultas.votante, count(consultas.votante) as participaciones
+from consultas
+group by votante
 order by participaciones desc;
