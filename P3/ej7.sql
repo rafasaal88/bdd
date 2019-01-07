@@ -1,9 +1,9 @@
 select votantes.nombrecompleto
-from votantes, 
+from votantes,
 (
     select consultas.votante, count(consultas.votante)
     from consultas
-    having count(consultas.votante) > 
+    having count(consultas.votante) >
     (
         select avg(conteo)
         from

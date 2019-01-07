@@ -2,11 +2,11 @@ select consultas.votante, count(consultas.votante)
 from consultas, (
     select votantes.dni
     from votantes
-    where votantes.fechanacimiento != 
+    where votantes.fechanacimiento !=
     (
         select min(votantes.fechanacimiento) as fn2
         from votantes
-        where votantes.fechanacimiento != 
+        where votantes.fechanacimiento !=
         (
             select min(votantes.fechanacimiento) as fn1
             from votantes

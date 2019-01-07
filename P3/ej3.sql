@@ -1,7 +1,7 @@
 select partidos.siglas
-from partidos, 
+from partidos,
 (
-    select * from 
+    select * from
     (
         select eventos_resultados.partido, count (eventos_resultados.partido) as corte
         from eventos_resultados, partidos
@@ -11,7 +11,7 @@ from partidos,
         where corte >=
         (
             select max(numeroeventos) as maximo
-            from 
+            from
             (
                 select eventos_resultados.partido, count (eventos_resultados.partido) as numeroeventos
                 from eventos_resultados
